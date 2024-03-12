@@ -63,6 +63,19 @@ var nt,ot;class rt extends b{constructor(){super(...arguments),this.renderOption
             .comb * {
                 visibility: visible;
             }
+            
+            .circle-behind {
+              position: absolute;
+              width: 300px; /* Adjust size */
+              height: 300px; /* Adjust size */
+              border-radius: 50%;
+              border: 2px solid #000; /* Adjust line thickness and color */
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              z-index: -1; /* Ensure it sits behind the honeycombs */
+            }
+
             #item {
                 height: 100%;
             }
@@ -79,9 +92,11 @@ var nt,ot;class rt extends b{constructor(){super(...arguments),this.renderOption
             }        
         `}render(){return D`
             <div class="honeycomb">
-                <div class="honey">
-                    <div class="comb">
-                        <div id="item"></div>
+                <div class="circle-behind"></div>
+                    <div class="honey">
+                        <div class="comb">
+                            <div id="item"></div>
+                        </div>
                     </div>
                 </div>
             </div>`}_computeIsActive(){this.config&&("boolean"==typeof this.config.active&&(this.active=this.config.active&&this.hass.states[this.config.entity]&&"on"==this.hass.states[this.config.entity].state),"string"==typeof this.config.active&&(this.active=ct(this.hass,this.hass.states[this.config.entity],this.config.variables,this.config.active)))}firstUpdated(){this.disabled||this.shadowRoot.querySelector("#item").append(this._createLovelaceCard())}_parseTemplates(){this.config.entity=ct(this.hass,null,this.config.variables,this.config.entity);for(let t in this.config)["tap_action","hold_action","double_tap_action"].indexOf(t)>-1&&(this.config[t]=at(this.hass,this.hass.states[this.config.entity],this.config.variables,this.config[t]))}_createLovelaceCard(){this.config.type&&"custom:button-card"!=this.config.type||(this.config.styles||(this.config.styles={}),Array.isArray(this.config.styles.card)||(this.config.styles.card=[]),this.config.styles.card.push({height:"100%",position:"fixed",padding:"0"}));var t=pt(ft({},{type:"custom:button-card",size:"30px",show_name:!1},this.config));return ut(t),t.addEventListener("action",t=>{t.detail.item=this,t.detail.autoclose=this.config.autoclose,t.detail.audio=this.config.audio}),t}}customElements.define(mt.is,mt);const bt=n(62);class _t extends rt{static get is(){return"xy-pad"}static get properties(){return{hass:{type:Object},config:{type:Object},size:{type:Number},clampX:{type:Number},clampY:{type:Number},active:{type:Boolean,reflect:!0,attribute:!0},_current:{type:Object}}}static get styles(){return c`
