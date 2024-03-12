@@ -190,7 +190,7 @@ var nt,ot;class rt extends b{constructor(){super(...arguments),this.renderOption
             }
             honeycomb-menu-item {
                 position: absolute;
-                pointer-events: all;
+                /* pointer-events: all; */
                 box-sizing: border-box;
                 width: var(--item-size);
                 padding: var(--spacing);
