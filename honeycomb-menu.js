@@ -185,15 +185,23 @@ var nt,ot;class rt extends b{constructor(){super(...arguments),this.renderOption
             }           
             .circle-behind {
               position: absolute;
-              width: 300px; /* Adjust size */
-              height: 300px; /* Adjust size */
+              width: 0px; /* Adjust size */
+              height: 0px; /* Adjust size */
               border-radius: 50%;
-              border: 2px solid #000; /* Adjust line thickness and color */
+              border: 30px solid rgb(136 164 166); /* Adjust line thickness and color */
               top: 50%;
               left: 50%;
               transform: translate(-50%, -50%);
-              z-index: -1; /* Ensure it sits behind the honeycombs */
+              animation-duration: 0.5s;
+              animation-fill-mode: both;
+              animation-name: zoomIn;
+              pointer-events: none;          
+              /* z-index: -1;  Ensure it sits behind the honeycombs */
             }
+            :host([closing]) .circle-behind {
+                animation-name: fadeOut;
+                animation-duration: 500ms;
+            }  
             .honeycombs {
                 --filter-color: rgba(0, 0, 0, 0.76);
                 filter: drop-shadow(2px 4px 3px var(--filter-color) );
