@@ -194,10 +194,28 @@ var nt,ot;class rt extends b{constructor(){super(...arguments),this.renderOption
               transform: translate(-50%, -50%);
               animation-duration: 0.5s;
               animation-fill-mode: both;
-              animation-name: zoomIn;
+              animation-name: fadeIn;
               pointer-events: none;          
               /* z-index: -1;  Ensure it sits behind the honeycombs */
+              display: flex;
+              justify-content: center;
+              align-items: center;
             }
+            
+            .cross-line {
+              position: absolute;
+              width: 40%; /* Adjust cross thickness */
+              height: 2px; /* Adjust cross thickness */
+              background-color: #fff; /* Adjust cross color */
+            }
+            .cross-line1 {
+              transform: rotate(45deg);
+            }
+
+            .cross-line2 {
+              transform: rotate(-45deg);
+            }
+            
             :host([closing]) .circle-behind {
                 animation-name: fadeOut;
                 animation-duration: 500ms;
@@ -261,7 +279,10 @@ var nt,ot;class rt extends b{constructor(){super(...arguments),this.renderOption
                     @drag-interval=${this._handleXYPad}
                     @drag-end=${this._handleXYPad}>
                 </xy-pad>`:""}
-            <div class="circle-behind"></div>
+            <div class="circle-behind">
+                  <div class="cross-line cross-line1"></div> <!-- First line of the cross -->
+                  <div class="cross-line cross-line2"></div> <!-- Second line of the cross -->
+            </div>
             <div id="honeycombs" class="honeycombs">
                 ${this.buttons.map((t,e)=>D`
                 <honeycomb-menu-item
