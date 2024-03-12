@@ -200,13 +200,15 @@ var nt,ot;class rt extends b{constructor(){super(...arguments),this.renderOption
               display: flex;
               justify-content: center;
               align-items: center;
+              box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
             }
             
             .cross-line {
-              position: absolute;
-              width: 40%; /* Adjust cross thickness */
-              height: 2px; /* Adjust cross thickness */
-              background-color: #fff; /* Adjust cross color */
+                position: absolute;
+                width: 5px;
+                height: 26px;
+                background-color: rgb(255, 255, 255);
+                border-radius: 20px;
             }
             .cross-line1 {
               transform: rotate(45deg);
