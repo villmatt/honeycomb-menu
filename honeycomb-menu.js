@@ -58,7 +58,7 @@ var nt,ot;class rt extends b{constructor(){super(...arguments),this.renderOption
                 transform: skewY(-30deg) rotate(60deg);
                 overflow: hidden;
 
-                background: #000;
+                /* background: #000; */
             }
             .comb * {
                 visibility: visible;
