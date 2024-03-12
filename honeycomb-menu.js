@@ -75,6 +75,7 @@ var nt,ot;class rt extends b{constructor(){super(...arguments),this.renderOption
             :host([disabled]) #item {
                 background: var(--honeycomb-menu-disabled, #9a9a9a6e);
                 pointer-events: none !important;
+                opacity: 0;
             }        
         `}render(){return D`
             <div class="honeycomb">
