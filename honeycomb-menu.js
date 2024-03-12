@@ -63,18 +63,6 @@ var nt,ot;class rt extends b{constructor(){super(...arguments),this.renderOption
             .comb * {
                 visibility: visible;
             }
-            
-            .circle-behind {
-              position: absolute;
-              width: 300px; /* Adjust size */
-              height: 300px; /* Adjust size */
-              border-radius: 50%;
-              border: 2px solid #000; /* Adjust line thickness and color */
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              z-index: -1; /* Ensure it sits behind the honeycombs */
-            }
 
             #item {
                 height: 100%;
@@ -194,6 +182,17 @@ var nt,ot;class rt extends b{constructor(){super(...arguments),this.renderOption
             :host([closing]) .shade {
                 animation-name: fadeOut;
                 animation-duration: 500ms;
+            }           
+            .circle-behind {
+              position: absolute;
+              width: 300px; /* Adjust size */
+              height: 300px; /* Adjust size */
+              border-radius: 50%;
+              border: 2px solid #000; /* Adjust line thickness and color */
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              z-index: -1; /* Ensure it sits behind the honeycombs */
             }
             .honeycombs {
                 --filter-color: rgba(0, 0, 0, 0.76);
