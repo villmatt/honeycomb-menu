@@ -64,12 +64,12 @@ var nt,ot;class rt extends b{constructor(){super(...arguments),this.renderOption
                 visibility: visible;
             }
             #item {
-                pointer-events: all;
                 height: 100%;
             }
 
             #item > * {
                 height: 100%;
+                pointer-events: all;
             }
             
             :host([disabled]) #item {
