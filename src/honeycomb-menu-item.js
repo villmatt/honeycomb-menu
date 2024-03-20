@@ -171,6 +171,7 @@ class HoneycombMenuItem extends LitElement
                 <div class="honey">
                     <div class="comb">
                         <div id="item"></div>
+                            <span class="label">${this.label}</span>
                     </div>
                 </div>
             </div>`;
