@@ -52,7 +52,10 @@ class HoneycombMenuItem extends LitElement
                 type: Boolean,
                 reflect: true,
                 attribute: true
-            }
+            },
+    	    label: { 
+        		type: String 
+    	    } // Add a property for the label
         };
     }
 
